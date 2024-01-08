@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "tsx watch src/server.ts",
+    "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
     "build": "tsup src --out-dir build"
   },
@@ -20,7 +20,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "fastify": "^4.25.2"
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.2",
+    "zod": "^3.22.4"
   },
   "config": {
     "commitizen": {

@@ -18,4 +18,6 @@ model Organization {
   cep         String
   address     String
   whatsapp    String
+
+  @@map("organizations")
 }

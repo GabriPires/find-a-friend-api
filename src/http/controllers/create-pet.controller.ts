@@ -40,7 +40,6 @@ export async function createPet(request: FastifyRequest, reply: FastifyReply) {
     independence,
     environment,
     organizationId,
-    pictures,
   } = createPetBodySchema.parse(request.body)
 
   try {
@@ -55,7 +54,6 @@ export async function createPet(request: FastifyRequest, reply: FastifyReply) {
       independence,
       environment,
       organizationId,
-      pictures,
     })
   } catch (error) {
     if (error instanceof ResourceNotFoundError) {

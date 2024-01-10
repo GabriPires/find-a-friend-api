@@ -12,7 +12,6 @@ interface CreatePetUseCaseRequest {
   independence: number
   environment: number
   organizationId: string
-  pictures?: string[]
 }
 
 interface CreatePetUseCaseResponse {
@@ -34,7 +33,6 @@ export class CreatePetUseCase {
     name,
     size,
     about,
-    pictures,
   }: CreatePetUseCaseRequest): Promise<CreatePetUseCaseResponse> {
     const organization =
       await this.organizationsRepository.findById(organizationId)
@@ -51,7 +49,6 @@ export class CreatePetUseCase {
       independence,
       name,
       size,
-      pictures,
       organization_id: organizationId,
     })
 

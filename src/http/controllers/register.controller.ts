@@ -9,8 +9,8 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
     email: z.string().email(),
     password: z.string().min(8),
     cep: z.string().length(9),
-    address: z.string(),
-    whatsapp: z.string().length(11),
+    address: z.string().min(1, 'Organization address is required'),
+    whatsapp: z.string().min(1, 'Organization WhatsApp is required').length(11),
   })
 
   const { address, cep, email, password, responsible, whatsapp } =

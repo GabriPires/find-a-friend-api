@@ -1,4 +1,3 @@
-import { beforeEach, describe, expect, it } from 'vitest'
 import { CreatePetUseCase } from './create-pet'
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets.repository'
 import { InMemoryOrganizationsRepository } from '@/repositories/in-memory/in-memory-organizations.repository'

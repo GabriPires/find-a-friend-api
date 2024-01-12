@@ -17,6 +17,7 @@ model Organization {
   password    String
   cep         String
   address     String
+  city        String
   whatsapp    String
 
   pets Pet[]

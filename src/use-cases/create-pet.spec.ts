@@ -9,13 +9,14 @@ let sut: CreatePetUseCase
 
 describe('Create Pet Use Case', () => {
   beforeEach(async () => {
-    petsRepository = new InMemoryPetsRepository()
     organizationsRepository = new InMemoryOrganizationsRepository()
+    petsRepository = new InMemoryPetsRepository(organizationsRepository)
     sut = new CreatePetUseCase(organizationsRepository, petsRepository)
 
     await organizationsRepository.create({
       id: 'organization-id',
       address: 'Rua dos Bobos, 0',
+      city: 'São Paulo',
       cep: '00000-000',
       email: 'johndoe@example.com',
       password: '12345678',

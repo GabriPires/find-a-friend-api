@@ -9,6 +9,7 @@ interface RegisterUseCaseRequest {
   password: string
   cep: string
   address: string
+  city: string
   whatsapp: string
 }
 
@@ -23,6 +24,7 @@ export class RegisterUseCase {
     email,
     password,
     address,
+    city,
     cep,
     responsible,
     whatsapp,
@@ -40,6 +42,7 @@ export class RegisterUseCase {
       email,
       password: passwordHash,
       address,
+      city,
       cep,
       responsible,
       whatsapp,

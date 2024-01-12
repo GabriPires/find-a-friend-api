@@ -27,12 +27,19 @@ export class InMemoryOrganizationsRepository
     return organization
   }
 
+  async findManyByCity(city: string) {
+    const organizations = this.items.filter((item) => item.city === city)
+
+    return organizations ?? []
+  }
+
   async create(data: Prisma.OrganizationCreateInput) {
     const organization = {
       id: data.id ?? randomUUID(),
       email: data.email,
       responsible: data.responsible,
       address: data.address,
+      city: data.city,
       cep: data.cep,
       password: data.password,
       whatsapp: data.whatsapp,
